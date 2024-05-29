@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ajax</title>
-    <style>
-      .espaco {
-        margin: 20px;
-      }
-    </style>
   </head>
   <body>
-    <div id="caixa" class="espaco">Este é um texto</div>
-    <button id="btn" class="espaco">Clicar</button>
+    <div id="caixa1"></div>
+    <div id="caixa2"></div>
 
-    <script src="main.js"></script>
+    <button onclick="fnajax('dados1.txt', cmd1)">Comando 1</button><br />
+    <button onclick="fnajax('dados2.txt', cmd2)">Comando 2</button>
+
+    <script src="javascript.js"></script>
   </body>
 </html>
