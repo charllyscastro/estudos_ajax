@@ -19,7 +19,7 @@ function btn_click() {
   };
 
   //preparar o pedido
-  pedido.open("GET", "dados.txt", true);
+  pedido.open("GET", "processar.php?n=francisco&a=jose", true);
 
   //enviar o pedido
   pedido.send();
