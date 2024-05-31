@@ -1,14 +1,24 @@
-$(document).ready(function () {
-  $("#cmd").click(function () {
-    $("#caixa").load("dadosx.txt", function (responseTxt, statusTxt, xhr) {
-      if (statusTxt == "success") {
-        alert("Aconteceu uma comunicação com sucesso.");
-      }
+// Submeter o formulario
+function submeterFormulario(id_formulario) {
+  let frm = $("#" + id_formulario);
 
-      if (statusTxt == "error") {
-        // alert("Aconteceu uma error na comunicação.");
-        alert("Erro: " + xhr.status + ": " + xhr.statusText);
-      }
+  frm.submit(function (e) {
+    //impede a submicao tradicional
+    e.preventDefault();
+
+    //submicao do formulario em ajax
+    $.ajax({
+      type: frm.attr("method"),
+      url: frm.attr("action"),
+      data: frm.serialize(),
+      //sucesso
+      success: function (i) {
+        $("#info").html("Enviado com sucesso!");
+      },
+      //erro
+      error: function () {
+        $("#info").html("Aconteceu um erro");
+      },
     });
   });
-});
+}

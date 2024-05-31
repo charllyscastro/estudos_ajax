@@ -4,14 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ajax</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
   <body>
-    <div id="caixa"></div>
+    <!-- formulario -->
+    <div id="info"></div>
+    <form action="tratar.php" method="post" id="minhaForm">
+      <div>
+        <input type="text" name="text_nome" placeholder="nome" />
+      </div>
+      <div>
+        <input type="email" name="text_email" placeholder="email" />
+      </div>
+      <textarea
+        name="text_mensagem"
+        placeholder="mensagem"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <div>
+        <button onclick="submeterFormulario('minhaForm')">Enviar</button>
+      </div>
+    </form>
 
-    <!-- <button onclick="executar()">Carregar</button> -->
-    <button id="cmd">Carregar</button>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="javascript.js"></script>
   </body>
 </html>
